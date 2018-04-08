@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>YaBoring</title>
+<script src="script.js"></script>
+<script src=""></script>
+<link type="text/css" rel="stylesheet" href="styles.css" />
+<link rel="shortcut icon" type="image/x-icon" href="blueicon.png">
+</head>
+<body onload="load()">
+    
+<div id="header">
+    <a href="index.html"><h1 id="title">YaBoring</h1></a>
+    <p id="user"><a href="account.html" id="userlink">Welcome,<br>Guest</a></p>
+</div>
+
+<div id="container">
+    <h3 id="titlebar"><a href="index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="account.html">Account</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="products.html">Products</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="about.html">About</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="contact.html">Contact</a></h3>
+</div>
+
+<div id="body">
+    <div id="innerbody">
+        <div id="text"></div>
+        <h1>Home</h1>
+        <h3>Welcome to YaBoring. YaBoring is a product designed to help you avoid boring conversations or interactions. Accounts are free for anyone to create, just enter your phone number and name to <a href="account.html">sign up.</a> Press the button below or on one of our <a href="products.html">many other platforms</a> to trigger a phone call to yourself to get out of a meeting or conversation. For more information, visit our <a href="about.html">about page.</a></h3>
+        <div onclick="BoringButton()" id="button">
+            <h4 id="buttontext">YaBoring</h4>
+        </div>
+        <h3 id="message">&nbsp;</h3>
+    </div>
+</div>
+<div id="footer">
+    <p><a id="footercopy">&copy;2018 YaBoring</a>&nbsp;&nbsp;&nbsp;&nbsp;<a id="footerlink" href="privacy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp;<a id="footerlink" href="terms.html">Terms of Service</a>&nbsp;&nbsp;&nbsp;&nbsp;<a id="footerlink" href="about.html#faqs">FAQs</a>&nbsp;&nbsp;&nbsp;&nbsp;<a id="footerlink" href="about.html#us">About Us</a>&nbsp;&nbsp;&nbsp;&nbsp;<a id="footerlink" href="contact.html">Contact</a></p>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBbeP4MdLX2anA_cE79kbhVdL6eioddB7s",
+    authDomain: "yaboring-200417.firebaseapp.com",
+    databaseURL: "https://yaboring-200417.firebaseio.com",
+    projectId: "yaboring-200417",
+    storageBucket: "yaboring-200417.appspot.com",
+    messagingSenderId: "434869670611"
+  };
+  firebase.initializeApp(config);
+</script>
+</body>
+</html>
