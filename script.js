@@ -10,10 +10,7 @@ function load() {
 
 function user() {
     var user = localStorage.getItem("login")
-    if (user !== null) {
-        return user;
-    }
-    return "Guest";
+    return user;
 }
 
 function YaBoring() {
@@ -23,21 +20,26 @@ function YaBoring() {
 }
 
 function BoringButton() {
-    YaBoring();
-    //graphics for load and check mark
-    //need to incorperate check to see if one free call has been made yet (or if they are a paying customer)
-    //need to change count time to the custom time paying customers set
-    //need to alert customers they need to create an account first or log in if not logged in
-    var count = 30;
-    counter();
-    function counter() {
-        document.getElementById("message").innerHTML = "YaBoring initiated. Distracting you from boredom within the next " + count + " seconds.";
-        count = count - 1;
-        if (count == -1) {
-            clearInterval(calling);
-            document.getElementById("message").innerHTML = "Your call should be going through to your phone. If it hasn't, please click <a href=\'contact.html\'>here.</a>";
+    var login = user();
+    if (login !== null) {
+        YaBoring();
+        var count = 30;
+        counter();
+        function counter() {
+            document.getElementById("message").innerHTML = "YaBoring initiated. Distracting you from boredom within the next " + count + " seconds.";
+            count = count - 1;
+            if (count == -1) {
+                clearInterval(calling);
+                document.getElementById("message").innerHTML = "Your call should be going through to your phone. If it hasn't, please click <a href=\'contact.html\'>here.</a>";
+            }
         }
+        var calling = setInterval(counter, 1000);
+        //show times with text or loading bar/circle
+    } else {
+        document.getElementById("message").innerHTML = "You need to create an account to use this program so that we know who to call! You can create an account for free <a href=\'account.html\'>here.</a>"
     }
-    var calling = setInterval(counter, 1000);
-    //show times with text or loading bar/circle
+        //graphics for load and check mark
+        //need to incorperate check to see if one free call has been made yet (or if they are a paying customer)
+        //need to change count time to the custom time paying customers set
+        //need to alert customers they need to create an account first or log in if not logged in
 }
